@@ -10,13 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Bikry User pannel</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/price-range.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <!-- <link href="css/responsive.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -33,9 +33,9 @@
 <!--/head-->
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-0 py-4" style="border-radius:0px!important;font-size:17px !important;">
+    <nav class="navbar col-12 navbar-expand-lg navbar-dark bg-dark mb-0 py-4" style="border-radius:0px!important;font-size:17px !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-size:19px !important;"><b>Zoyodaily</b></a>
+            <a class="navbar-brand" href="index.php" style="font-size:19px !important;"><b>Zoyodaily</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
