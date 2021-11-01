@@ -13,7 +13,7 @@
             echo '<div class="alert alert-danger alert-dismissible" role="alert">
                 <strong>Item already added to your cart!</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true" style="font-size:25px !important;">&times;</span>
                 </button>
               </div>';  
            }
@@ -22,11 +22,13 @@
            $_SESSION['cart'][$count]=array("id"=>$pid,
                                             "name"=>$pname,
                                             "price"=>$pprice,
-                                            "image"=>$pimage);
+                                            "image"=>$pimage,
+                                          "qty"=>1,
+                                        "tprice"=>$pprice);
             echo '<div class="alert alert-success alert-dismissible" role="alert">
                     <strong>Item added to your cart!</strong>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
+                       <span aria-hidden="true" style="font-size:25px !important;">&times;</span>
                          </button>
                         </div>'; 
            }
@@ -35,11 +37,13 @@
         $_SESSION['cart'][0]=array("id"=>$pid,
         "name"=>$pname,
         "price"=>$pprice,
-        "image"=>$pimage,);
+        "image"=>$pimage,
+        "qty"=>1,
+      "tprice"=>$pprice);
         echo '<div class="alert alert-success alert-dismissible" role="alert">
                     <strong>Item added to your cart!</strong>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
+                       <span aria-hidden="true" style="font-size:25px !important;">&times;</span>
                          </button>
                         </div>'; 
        }
@@ -64,5 +68,28 @@
           $_SESSION['cart']=array_values($_SESSION['cart']);
         }
       }
+      $_SESSION['showalert']='block';
+      $_SESSION['message']='Item removed from cart!';
+      header("location:cart.php");
     }
+    if(isset($_POST['itemQty'])){
+      $qty=$_POST['itemQty'];
+      $pid=$_POST['pid2'];
+      $pprice=$_POST['pprice'];
+      $pimage=$_POST['img'];
+      $tprice=$qty*$pprice;
+      foreach($_SESSION['cart'] as $key=>$value){
+        if($value['id']==$pid){
+          $pname=$value['name'];
+          $_SESSION['cart'][$key]=array("id"=>$pid,
+          "name"=>$pname,
+          "price"=>$pprice,
+          "image"=>$pimage,
+          "qty"=>$qty,
+          "tprice"=>$tprice
+        );
+          echo $tprice;
+        }
+      }
+  }
 ?>
