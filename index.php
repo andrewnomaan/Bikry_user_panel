@@ -4,10 +4,9 @@
 ?>
 
 <section>
-	<div id="message" style="font-size:20px;" class="mt-4 mb-2"></div>
     <div class="container d-flex mt-5">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-3">
                 <div class="left-sidebar relative">
                     <h2>Category</h2>
                     <div class="panel-group category-products" id="accordian">
@@ -29,17 +28,17 @@
                         <?php } ?>
                     </div>
                     <!--/category-products-->
-
+                    <div id="message" style="font-size:18px;" class="mt-4 mb-2"></div>
                 </div>
             </div>
 
-<div class="col-sm-9 padding-right">
+<div class="col-9 padding-right">
     <?php
 						    $cat_sql="SELECT * FROM categories";
 							$cat_res=mysqli_query($conn,$sql);
 							while ($cat_row=mysqli_fetch_assoc($cat_res)) { 
 						?>
-    <div class="features_items">
+    <div class="row">
         <!--features_items-->
 
         <h2 class="title text-center"><?php echo $cat_row['cat_name'] ?> Products</h2>
@@ -48,7 +47,7 @@
 					    $product_res=mysqli_query($conn,$product_sql);
 					    while ($row=mysqli_fetch_assoc($product_res)) {
 					   ?>
-        <div class="col-sm-4">
+        <div class="col-4">
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
